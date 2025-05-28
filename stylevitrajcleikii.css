@@ -1,0 +1,437 @@
+@font-face {
+  font-family: 'Maslov';
+  src: url('font/CD-Masvol-Thin.otf');
+  font-weight: normal;
+  font-style: normal;
+  }
+  
+  * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+        margin: 0;
+        padding: 0;
+      }
+body {
+    
+    background-color: #fff;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 10;
+    background-color: white;
+    overflow: hidden;
+  }
+  .header-inner {
+    position: relative;
+    display: flex;
+    justify-content: space-between; /* центрируем содержимое */
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+    .logo {
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      transform: translateY(-50%);
+      font-size: 30px;
+      transition: opacity 0.3s ease;
+      z-index: 1;
+      font-family:'Maslov';
+  }
+  
+
+/* Контейнер на всю страницу */
+.fullpage-layout {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    min-height: 100vh;
+    flex: 1 ;
+  }
+  .back-link {
+    position: absolute;
+    display: flex;    
+    align-items: center; 
+    top: 20px; 
+    left: 20px;
+    color: black;
+    padding: 8px 16px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    text-decoration: none;
+  }
+  .back-icon {
+    width: 20px;              
+    height: 20px;              
+    margin-right: 8px;   
+    margin-left: 30px;      
+  }
+  .back-link span {
+    position: relative;
+  }
+  .back-link span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .back-link:hover span::after {
+    opacity: 1;
+  }
+  
+  /* Левая часть с изображением */
+  .image-side {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+  }
+  
+  .image-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  
+  /* Правая часть с анимированным фоном и текстом */
+  .animated-side {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 100vh;
+    box-shadow: inset 0 40px 60px -20px rgba(0, 0, 0, 0.3);
+    padding-top: 80px;
+  }
+  
+  /* Анимированный фон */
+  .gradient-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: 
+      url('image/облака.png'),
+      linear-gradient(270deg, #adadad, #b7b7b7, #c1c1c1c9, #b8b8b8, #faeff7cd, #d5c9dac0);
+    background-blend-mode: overlay;
+    background-size: cover, 800% 800%;
+    background-position: center, 0% 50%;
+    animation: gradientShift 20s ease infinite;
+    opacity: 0.8;
+    filter: blur(15px);
+    z-index: 0;
+  }
+  /* Текст поверх */
+  .text-overlay {
+    position: absolute;
+    top: 40px;
+    left: 60px; /* отступ от левого края */
+    max-width: 600px;
+    border-radius: 12px;
+    padding: 40px;
+    z-index: 2;
+    text-align: left;
+  }
+  .text-overlay h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  
+  .text-overlay p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  .text-overlay ul {
+    padding-left: 20px;
+    color: #444;
+    font-size: 18px;
+  }
+  
+  .text-overlay ul li {
+    margin-bottom: 8px;
+    list-style-type: disc;
+    margin-bottom: 16px;
+  }
+  @media (max-width: 768px) {
+    .text-overlay {
+      left: 20px;
+      right: 20px;
+      max-width: none;
+      padding: 20px;
+      transform: translateY(0);
+      top: auto;
+      bottom: 20px;
+    }
+  }
+  .heading-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  
+  .zakaz {
+    font-size: 14px;
+    color: #333;
+  }
+    .zakaz-btn {
+  background-color: #876100;
+  color: white;
+  padding: 8px 16px;
+  font-size: 18px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+  margin-left: 350px;
+  text-decoration: none; /* убираем подчеркивание у ссылки */
+  display: inline-block; /* чтобы ссылка была как кнопка  */
+}
+
+.zakaz-btn:hover {
+  background-color: #fac000;
+}
+
+  .heading-line {
+    border: none;
+    height: 1px;
+    background-color: #4a4040;
+    margin: 16px 0 32px;
+  }
+  
+  
+  
+  
+  
+  .site-footer {
+    background-color: #fff;
+    padding: 40px 60px;
+    position: relative;;
+    width: 100%;
+    margin-top: auto;
+    border-top: 1px solid #ccc;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: flex-start;
+  }
+  
+  .footer-logo img {
+    height: 100px;
+  }
+  
+  .footer-contacts, .footer-newsletter {
+    max-width: 300px;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+    padding: 10px 0;
+  }
+  
+  .footer-contacts p,
+  .footer-newsletter p,
+  .footer-newsletter h3 {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #000;
+  }
+  
+  .footer-contacts a,
+  .footer-newsletter a {
+    color: #000;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .footer-contacts a:hover,
+  .footer-newsletter a:hover {
+    text-decoration: underline;
+    color: #1C3A57;
+  }
+  
+  .footer-newsletter form {
+    display: flex;
+    margin-top: 10px;
+  }
+  
+  .footer-newsletter input[type="email"] {
+    padding: 10px;
+    flex: 1;
+    border: none;
+    background-color: #1C3A57;
+    color: white;
+  }
+  
+  .footer-newsletter input::placeholder {
+    color: white;
+  }
+  
+  .footer-newsletter button {
+    padding: 10px 20px;
+    background-color: white;
+    border: 1px solid #1C3A57;
+    color: #1C3A57;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .footer-newsletter button:hover {
+    background-color: #1C3A57;
+    color: white;
+  }
+  .footer-newsletter button:hover {
+    background-color: #1C3A57;
+    color: white;
+  }
+  .footer-contacts a:hover,
+.footer-newsletter a:hover {
+    text-decoration: underline;
+    color: #1C3A57;
+}
+ 
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 300px; /* Small size */
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #1C3A57; /* Match your color scheme */
+}
+
+.close:hover {
+  color: #000;
+}
+  
+  .footer-socials {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  
+  .footer-socials img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  
+  .footer-socials img:hover {
+    transform: scale(1.1);
+  }
+  
+  
+  /* Анимация фона */
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+@media (max-width: 768px) {
+  site-footer {
+    padding: 30px 20px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .footer-logo img {
+    height: 60px;
+  }
+
+  .footer-contacts,
+  .footer-newsletter {
+    max-width: 100%;
+    text-align: center;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    padding: 8px 0;
+  }
+
+  .footer-contacts p,
+  .footer-newsletter p,
+  .footer-newsletter h3 {
+    font-size: 12px;
+    margin: 8px 0;
+  }
+
+  .footer-newsletter form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-newsletter input[type="email"] {
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+
+  .footer-newsletter button {
+    width: 100%;
+    font-size: 14px;
+  }
+}
